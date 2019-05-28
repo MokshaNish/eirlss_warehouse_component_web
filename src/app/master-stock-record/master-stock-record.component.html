@@ -1,0 +1,39 @@
+<h1>Master Stock Record</h1>
+
+<div class="container">
+  <table *ngIf ="stockItem"  class="table">
+    <thead>
+      <tr>
+        <th scope="col">Item ID</th>
+        <th scope="col">Item Name</th>
+        <th scope="col">BIN ID</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Status</th>
+        <th scope="col">Select delete item </th>
+         
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of stockItem">
+        <th scope="row">{{s.id}}</th>
+        <td>{{s.itemName}}</td>
+        <td>{{s.binId}}</td>
+        <td>{{s.quantity}}</td>
+        <td>{{s.status}}</td>
+        <td><input type="checkbox" id="checkbox" name="quality" ngModel #checkbox = "ngModel" (change)="itemSelected($event.target.checked, s.id)"></td>
+
+      </tr>
+      
+    </tbody>
+  </table><br><br>
+
+  <button routerLink="/manageItems/new" type="button" class="btn btn-primary"  id = "additem"  >
+    Add Item
+  </button>
+  
+  <button type="button" (click)="deleteItem()" class="btn btn-primary"  id = "deleteItem">
+   Delete Item
+  </button>
+
+</div>
+

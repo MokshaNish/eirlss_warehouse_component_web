@@ -1,0 +1,17 @@
+#deleteItem{
+    margin-left: 300px
+
+}
+
+h1 { font: bold 100% sans-serif; letter-spacing: 0.5em; text-align: center; text-transform: uppercase; font-size:30px; text-decoration: underline;}
+
+#deleteItem {
+    margin-left: 250px;
+    font-size: 18px;
+  
+}
+
+#AddItem {
+    margin-left: 250px;
+    font-size: 18px;
+}

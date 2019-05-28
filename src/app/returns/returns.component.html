@@ -1,0 +1,26 @@
+<h1>Return Item Note</h1>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+          <th scope="col">Return Note ID</th>
+        <th scope="col">Item Code</th>
+        <th scope="col">Item Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Status</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of returnItem">
+            <th scope="row">{{r.id}}</th>
+            <td>{{r.itemId}}</td>
+            <td>{{r.itemName}}</td>
+            <td>{{r.quantity}}</td>
+            <td>{{r.status}}</td>
+          </tr>
+          
+    </tbody>
+  </table>
+</div>
+

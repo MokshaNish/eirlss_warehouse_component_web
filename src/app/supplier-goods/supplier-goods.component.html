@@ -1,0 +1,82 @@
+<h1>Supplier Delivery Note</h1>
+<br><br>
+<div class="container">
+  <table class="table">
+    
+    <thead>
+      <tr>
+        <th scope="col">Item ID</th>
+        <th scope="col">Supplier ID</th>
+        <th scope="col">Item Name</th>
+        <th scope="col">Item Price</th>
+        <th scope="col">Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of suppliergoods">
+        <th scope="row">{{i.itemId}}</th>
+        <td>{{i.supplierId}}</td>
+        <td>{{i.itemName}}</td>
+        <td>{{i.itemPrice}}</td>
+        <td>{{i.quantity}}</td>
+      </tr>
+      
+    </tbody>
+  </table><br><br>
+  <button type="button" class="btn btn-primary" data-toggle="modal" id = "displaysupnote" data-target="#exampleModal">
+    Display Supplier Goods Notice
+  </button>
+
+  <button type="button" id= "checkquality" routerLink="/checkquality" class="btn btn-primary">
+    Ckeck the Quality
+  </button>
+
+</div>
+
+
+  <!-- Modal -->
+  <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Supplier Goods Notice </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Item ID</th>
+                  <th scope="col">Spplier ID</th>
+                  <th scope="col">Item Name</th>
+                  <th scope="col">Item Price</th>
+                  <th scope="col">Quantity</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let i of suppliergoods">
+                  <th scope="row">{{i.itemId}}</th>
+                  <td>{{i.supplierId}}</td>
+                  <td>{{i.itemName}}</td>
+                  <td>{{i.itemPrice}}</td>
+                  <td>{{i.quantity}}</td>
+                  
+
+                </tr>
+                
+              </tbody>
+            </table>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
+    
+
+
+ 

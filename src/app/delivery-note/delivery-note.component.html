@@ -1,0 +1,30 @@
+<h1>Shipping Documentation</h1>
+<p>Date : 12/12/2018</p>
+
+<div class="container">
+  <table *ngIf = "shipnote" class="table">
+    <thead>
+      <tr>
+        <th scope="col">Item ID</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Shipping Address</th>
+        <th scope="col">Shipping Mode</th>
+        <th scope="col">Select Completed Orders</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of shipnote">
+        <th scope="row">{{s.itemId}}</th>
+        <td>{{s.quantity}}</td>
+        <td>{{s.shippingAddress}}</td>
+        <td>{{s.shippingMode}}</td>
+        <td><input type="checkbox" id="checkbox" name="quality" ngModel #checkbox = "ngModel" (change)="compleyedOrders($event.target.checked, s.id)"></td>
+        <td contenteditable='true'>{{s.status}}</td>
+      </tr>
+      
+    </tbody>
+  </table><br><br>
+  <button type="button" id= "updateStatus" (click)="updateStatus()" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+update the Status </button>
+  </div>

@@ -1,0 +1,28 @@
+<h1>Add Item</h1>
+
+<div class="container">
+  <form #productForm="ngForm" (ngSubmit)="AddItem()">
+    <div class="form-group">
+
+      <label for="id">Item ID</label>
+      <input type="text" #id="ngModel" [(ngModel)]="itemDetail.id" class="form-control" id="id" name="id" readonly>
+    </div>
+    <div class="form-group">
+      <label for="binId">BIN number</label>
+      <input type="text" #binId="ngModel" [(ngModel)]="itemDetail.binId" class="form-control" id="binId" name="binId"
+        placeholder="Enter BIN number ">
+    </div>
+    <div class="form-group">
+      <label for="itemName">Item Name</label>
+      <input type="text" #itemName="ngModel" [(ngModel)]="itemDetail.itemName" class="form-control" id="itemName"
+        name="itemName" placeholder="Enter Item Name">
+    </div>
+    <div class="form-group">
+      <label for="quantity">Quantity</label>
+      <input type="text" #quantity="ngModel" [(ngModel)]="itemDetail.quantity" class="form-control" id="quantity"
+        name="quantity" placeholder="Enter Quantity">
+    </div>
+    <div>
+      <button type="submit" id="AddItem" class="btn btn-primary">Add Item</button>
+    </div>
+  </form>

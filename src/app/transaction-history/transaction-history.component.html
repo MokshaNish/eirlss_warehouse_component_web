@@ -1,0 +1,33 @@
+<div class="container">
+  <table *ngIf ="transdetail"  class="table">
+    <thead>
+      <tr>
+        <th scope="col">Item ID</th>
+        <th scope="col">Item Name</th>
+        <th scope="col">Bin ID</th>
+        <th scope="col">Status</th>
+        <th scope="col">Minimun Stock level</th> 
+        <th scope="col">Re-order Quantity</th> 
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of transdetail">
+        <th scope="row">{{t.itemId}}</th>
+        <td>{{t.itemName}}</td>
+        <td>{{t.binId}}</td>
+        <td>{{t.status}}</td>
+        <td>{{t.minStockLevel}}</td>
+        <td>{{t.reOrderQunatity}}</td>
+      </tr>
+      
+    </tbody>
+  </table><br><br>
+
+  <button type="button" id= "changeStatus"  class="btn btn-danger">
+    Change the Status
+  </button>
+  
+
+</div>
+
+

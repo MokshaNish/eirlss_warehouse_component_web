@@ -1,0 +1,10 @@
+h1 { font: bold 100% sans-serif; letter-spacing: 0.5em; text-align: center; text-transform: uppercase; font-size:30px; text-decoration: underline;}
+
+
+table, th, td {
+    border: 1px solid black;
+  }
+  th, td {
+    padding: 15px;
+    text-align: left;
+  }

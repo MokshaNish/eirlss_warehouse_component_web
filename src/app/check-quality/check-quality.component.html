@@ -1,0 +1,128 @@
+<h1>Quality Check</h1>
+
+<div class="container">
+  <table *ngIf="supgoods" class="table">
+    <thead>
+      <tr>
+        <th scope="col">Item ID</th>
+        <th scope="col">Spplier ID</th>
+        <th scope="col">Item Name</th>
+        <th scope="col">Item Price</th>
+        <th scope="col">Good Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of supgoods">
+        <th scope="row">{{s.itemId}}</th>
+        <td>{{s.supplierId}}</td>
+        <td>{{s.itemName}}</td>
+        <td>{{s.itemPrice}}</td>
+
+        <td>
+          <button type="button" class="btn btn-primary" id="goodsreceived" (click)="minusSupGoods(s)"> - </button>
+          {{s.quantity}}
+          <button type="button" class="btn btn-primary" id="goodsreceived" (click)="addSupGoods(s)"> + </button>
+        </td>
+
+        <!-- <td><input #quantity="ngModel" [(ngModel)]="s.quantity" type="number" name="quantity" class="form-control" /> -->
+        <!-- <td><input type="checkbox" id="checkbox" name="quality" ngModel #checkbox="ngModel"
+            (change)="itemSelected($event.target.checked, s)"></td> -->
+      </tr>
+
+    </tbody>
+  </table><br><br>
+
+  <button type="button" class="btn btn-primary" data-toggle="modal" id="goodsreceived" data-target="#exampleModal">
+    Goods Received Notice
+  </button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" id="goodsrejection" data-target="#exampleModalreject" (click)="diffCheck()">
+    Goods Rejection Notice
+  </button>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Goods Received Notice </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Item ID</th>
+                <th scope="col">Item Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">BIN Id</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of goodItems">
+                <th scope="row">{{i.itemId}}</th>
+                <td>{{i.itemName}}</td>
+                <td>{{i.quantity}}</td>
+                <td><input #binId="ngModel" [(ngModel)]="i.binId" type="number" name="binId" class="form-control" />
+                </td>
+
+
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <button type="button" class="btn btn-primary" (click)="addBinAndSave(i)" id="goodsreceived"> Add BIN </button>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Modal -->
+  <div class="modal" id="exampleModalreject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Goods Rejection Notice </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Item ID</th>
+                  <th scope="col">Item Name</th>
+                  <th scope="col">Quantity</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let w of badItems">
+                  <th scope="row">{{w.itemId}}</th>
+                  <td>{{w.itemName}}</td>
+                  <td>{{w.quantity}}</td>
+
+
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>

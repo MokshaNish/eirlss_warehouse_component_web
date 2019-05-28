@@ -1,0 +1,32 @@
+<h1>Bill Of Materials</h1>
+
+
+
+<div class="card text-center">
+  <div class="card-body">
+    <h5 class="card-title">Date{{myDate | date: 'dd/MM/yyyy'}}</h5>
+  </div>
+</div>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">BOM Level</th>
+        <th scope="col">Item ID</th>
+        <th scope="col">Item Name</th>
+        <th scope="col">Quantity</th>        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let b of bomList ">
+        <th scope="row">{{b.id}}</th>
+        <td>{{b.itemId}}</td>
+        <td>{{b.itemName}}</td>
+        <td>{{b.quantity}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+  <button (click)="recordDetailsAll()" id = "recordall" class="btn btn-primary">Record All Details</button>
+</div>
